@@ -4,8 +4,8 @@
     {
         public CuentaBancaria(int cbu, double saldo)
         {
-            this.Cbu = cbu;
-            this.Saldo = saldo;
+            Cbu = cbu;
+            Saldo = saldo;
         }
         public int Cbu { get; set; }
         public double Saldo { get; set; }

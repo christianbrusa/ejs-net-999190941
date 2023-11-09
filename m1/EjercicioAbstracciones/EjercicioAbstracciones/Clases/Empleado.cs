@@ -7,16 +7,16 @@ namespace EjercicioAbstracciones
     {
         public Empleado(string nombre, string apellido, string dni, Direccion domicilio, Auto vehiculo, List<Oficio> oficios) : base(nombre, apellido, dni, domicilio, vehiculo)
         {
-            this.Oficios = oficios;
+            Oficios = oficios;
         }
 
-        public List<Oficio> Oficios { get; set; }
+        public IList<Oficio> Oficios { get; set; }
 
         public void Trabajar()
         {
-            foreach (Oficio oficio in Oficios)
+            foreach (var oficio in Oficios)
             {
-                oficio.Trabajar(this.Nombre);
+                oficio.Trabajar(Nombre);
             }
         }
     }
