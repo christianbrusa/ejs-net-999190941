@@ -4,9 +4,9 @@
     {
         public Oficio(double salario, int antiguedad, CuentaBancaria cuentaBancaria)
         {
-            this.Salario = salario;
-            this.Antiguedad = antiguedad;
-            this.CuentaBancaria = cuentaBancaria;
+            Salario = salario;
+            Antiguedad = antiguedad;
+            CuentaBancaria = cuentaBancaria;
         }
         
         public double Salario { get; set; }

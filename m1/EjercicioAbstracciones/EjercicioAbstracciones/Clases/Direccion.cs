@@ -4,9 +4,9 @@
     {
         public Direccion(string calle, int codigoPostal, string ciudad)
         {
-            this.Calle = calle;
-            this.CodigoPostal = codigoPostal;
-            this.Ciudad = ciudad;
+            Calle = calle;
+            CodigoPostal = codigoPostal;
+            Ciudad = ciudad;
         }
         
         public string Calle { get; set; }

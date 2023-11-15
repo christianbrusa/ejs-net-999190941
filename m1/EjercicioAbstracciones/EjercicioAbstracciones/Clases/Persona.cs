@@ -4,11 +4,11 @@
     {
         public Persona(string nombre, string apellido, string dni, Direccion domicilio, Auto vehiculo)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Dni = dni;
-            this.Domicilio = domicilio;
-            this.Vehiculo = vehiculo;
+            Nombre = nombre;
+            Apellido = apellido;
+            Dni = dni;
+            Domicilio = domicilio;
+            Vehiculo = vehiculo;
         }
         
         public string Nombre { get; set; }
