@@ -5,7 +5,7 @@ namespace EjercicioAbstracciones
 {
     public class Empleado : Persona
     {
-        public Empleado(string nombre, string apellido, string dni, Direccion domicilio, Auto vehiculo, List<Oficio> oficios) : base(nombre, apellido, dni, domicilio, vehiculo)
+        public Empleado(string nombre, string apellido, string dni, Direccion domicilio, Auto vehiculo, IList<Oficio> oficios) : base(nombre, apellido, dni, domicilio, vehiculo)
         {
             Oficios = oficios;
         }
