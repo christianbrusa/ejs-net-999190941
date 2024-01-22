@@ -19,12 +19,12 @@ public class Pelicula
     public double Precio { get; set; }
     public List<Existencia> Existencia { get; set; }
     public IEstado Estado { get; set; }
-    public void Alquilar(string formato)
+    public void Alquilar(FormatoExistencia formato)
     {
         Estado.Alquilar(this, formato);
     }
     private bool PuedeEstarDisponible(List<Existencia> existencia)
     {
-        return existencia.Any(existencia => existencia.TieneCopiasDisponibles());
+        return existencia.Exists(existencia => existencia.TieneCopiasDisponibles());
     }
 }

@@ -2,9 +2,9 @@
 
 public class EstadoDisponible : IEstado
 {
-    public void Alquilar(Pelicula pelicula, string formato)
+    public void Alquilar(Pelicula pelicula, FormatoExistencia formato)
     {
-        var existenciaFormatoElegido = pelicula.Existencia.Where(copia => copia.Formato == formato).ToList();
+        var existenciaFormatoElegido = pelicula.Existencia.First(copia => copia.Formato == formato);
         ModificarExistencia(existenciaFormatoElegido);
         if (!QuedanCopiasEnAlgunFormato(pelicula))
         {
@@ -12,18 +12,18 @@ public class EstadoDisponible : IEstado
         }
     }
 
-    public void Devolver(Pelicula pelicula, string formato)
+    public void Devolver(Pelicula pelicula, FormatoExistencia formato)
     {
         //not implemented
     }
 
-    public void Reservar(Pelicula pelicula, string formato)
+    public void Reservar(Pelicula pelicula, FormatoExistencia formato)
     {
         //not implemented
     }
-    private void ModificarExistencia(List<Existencia> existenciaPelicula)
+    private void ModificarExistencia(Existencia existenciaPelicula)
     {
-        existenciaPelicula[0].Copias -= 1;
+        existenciaPelicula.Copias -= 1;
     }
     private bool QuedanCopiasEnAlgunFormato(Pelicula pelicula)
     {

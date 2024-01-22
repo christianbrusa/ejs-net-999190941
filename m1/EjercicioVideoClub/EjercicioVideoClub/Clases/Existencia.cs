@@ -1,13 +1,19 @@
 ﻿namespace EjercicioVideoClub.Clases;
 
+public enum FormatoExistencia
+{
+    DVD,
+    VHS
+}
+
 public class Existencia
 {
-    public Existencia(string formato, int copias)
+    public Existencia(FormatoExistencia formato, int copias)
     {
         Formato = formato;
         Copias = copias;
     }
-    public string Formato { get; set; }
+    public FormatoExistencia Formato { get; set; }
     public int Copias { get; set; }
     public bool TieneCopiasDisponibles()
     {

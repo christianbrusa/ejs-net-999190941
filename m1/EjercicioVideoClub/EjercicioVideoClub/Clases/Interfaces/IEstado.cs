@@ -2,7 +2,7 @@
 
 public interface IEstado
 {
-    void Alquilar(Pelicula pelicula, string formato);
-    void Devolver(Pelicula pelicula, string formato);
-    void Reservar(Pelicula pelicula, string formato);
+    void Alquilar(Pelicula pelicula, FormatoExistencia formato);
+    void Devolver(Pelicula pelicula, FormatoExistencia formato);
+    void Reservar(Pelicula pelicula, FormatoExistencia formato);
 }
