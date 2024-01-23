@@ -5,6 +5,7 @@ public class EstadoDisponible : IEstado
     public void Alquilar(Pelicula pelicula, FormatoExistencia formato)
     {
         var existenciaFormatoElegido = pelicula.Existencia.First(copia => copia.Formato == formato);
+        if (existenciaFormatoElegido.Copias <= 0) throw new Exception("Error, no hay copias disponibles para este formato");
         ModificarExistencia(existenciaFormatoElegido);
         if (!QuedanCopiasEnAlgunFormato(pelicula))
         {
