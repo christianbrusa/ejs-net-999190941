@@ -1,10 +1,6 @@
 ﻿namespace EjercicioVideoClub.Clases;
 
-public enum FormatoExistencia
-{
-    DVD,
-    VHS
-}
+public enum FormatoExistencia { DVD, VHS }
 
 public class Existencia
 {
