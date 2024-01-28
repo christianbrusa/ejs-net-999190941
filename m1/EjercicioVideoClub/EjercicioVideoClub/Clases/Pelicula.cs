@@ -1,4 +1,5 @@
 ﻿using EjercicioVideoClub.Clases.Estados;
+using EjercicioVideoClub.Clases.Exceptions;
 
 namespace EjercicioVideoClub.Clases;
 
@@ -8,7 +9,7 @@ public class Pelicula
     {
         if (estado is EstadoDisponible && !PuedeEstarDisponible(existencia))
         {
-            throw new Exception("Error, una pelicula sin existencias no puede estar disponible");
+            throw new NoDisponibleException();
         }
         Titulo = titulo;
         Precio = precio;

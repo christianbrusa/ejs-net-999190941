@@ -1,10 +1,12 @@
-﻿namespace EjercicioVideoClub.Clases.Estados;
+﻿using EjercicioVideoClub.Clases.Exceptions;
+
+namespace EjercicioVideoClub.Clases.Estados;
 
 public class EstadoAlquilado : IEstado
 {
     public void Alquilar(Pelicula pelicula, FormatoExistencia formato)
     {
-        throw new Exception($"La pelicula {pelicula.Titulo} no se encuentra disponible");
+        throw new NoDisponibleException(pelicula.Titulo);
     }
 
     public void Devolver(Pelicula pelicula, FormatoExistencia formato)
@@ -14,6 +16,6 @@ public class EstadoAlquilado : IEstado
 
     public void Reservar(Pelicula pelicula, FormatoExistencia formato)
     {
-        //not implemented
+        throw new NoDisponibleException(pelicula.Titulo);
     }
 }
