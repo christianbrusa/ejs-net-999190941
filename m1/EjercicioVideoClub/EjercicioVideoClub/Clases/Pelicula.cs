@@ -23,6 +23,12 @@ public class Pelicula
     {
         Estado.Alquilar(this, formato);
     }
+    
+    public void Reservar(FormatoExistencia formato)
+    {
+        Estado.Reservar(this, formato);
+    }
+    
     private bool PuedeEstarDisponible(List<Existencia> existencia)
     {
         return existencia.Exists(existencia => existencia.TieneCopiasDisponibles());

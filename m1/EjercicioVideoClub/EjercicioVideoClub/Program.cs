@@ -19,8 +19,10 @@ namespace EjercicioVideoClub
             DateTime fechaInicioOperacion1 = new DateTime(2023, 1, 10);
             DateTime fechaDevolucionOperacion1 = new DateTime(2023, 1, 12);
             var operacion1 = new Alquiler(pepe, peliculasOperacion1, FormatoExistencia.VHS, 50, fechaInicioOperacion1, fechaDevolucionOperacion1);
-
+            var operacion2 = new Reserva(pepe, peliculasOperacion1, FormatoExistencia.DVD, 50, fechaInicioOperacion1, DuracionAlquiler.Horas24);
+            
             pepe.Alquilar(operacion1);
+            pepe.Reservar(operacion2);
         }
     }
 }

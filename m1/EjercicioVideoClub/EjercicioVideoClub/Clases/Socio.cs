@@ -15,4 +15,9 @@ public class Socio
     {
         operacion.Peliculas.ForEach(pelicula => pelicula.Alquilar(operacion.Formato));
     }
+
+    public void Reservar(Operacion operacion)
+    {
+        operacion.Peliculas.ForEach(pelicula => pelicula.Reservar(operacion.Formato));
+    }
 }
