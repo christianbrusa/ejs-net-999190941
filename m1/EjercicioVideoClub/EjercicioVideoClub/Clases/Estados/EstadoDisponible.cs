@@ -5,10 +5,7 @@ public class EstadoDisponible : IEstado
     public void Alquilar(Pelicula pelicula, FormatoExistencia formato)
     {
         GestionarExistencia(pelicula, formato);
-        if (!QuedanCopiasEnAlgunFormato(pelicula))
-        {
-            pelicula.Estado = new EstadoAlquilado();
-        }
+        GestionarEstado(pelicula, new EstadoAlquilado());
     }
 
     public void Devolver(Pelicula pelicula, FormatoExistencia formato)
@@ -19,10 +16,7 @@ public class EstadoDisponible : IEstado
     public void Reservar(Pelicula pelicula, FormatoExistencia formato)
     {
         GestionarExistencia(pelicula, formato);
-        if (!QuedanCopiasEnAlgunFormato(pelicula))
-        {
-            pelicula.Estado = new EstadoReservado();
-        }
+        GestionarEstado(pelicula, new EstadoReservado());
     }
 
     private void GestionarExistencia(Pelicula pelicula, FormatoExistencia formato)
@@ -30,6 +24,14 @@ public class EstadoDisponible : IEstado
         var existenciaFormatoElegido = pelicula.Existencia.First(copia => copia.Formato == formato);
         if (existenciaFormatoElegido.Copias <= 0) throw new Exception("Error, no hay copias disponibles para este formato");
         ModificarExistencia(existenciaFormatoElegido);
+    }
+
+    private void GestionarEstado(Pelicula pelicula, IEstado estado)
+    {
+        if (!QuedanCopiasEnAlgunFormato(pelicula))
+        {
+            pelicula.Estado = estado;
+        }
     }
     
     private void ModificarExistencia(Existencia existenciaPelicula)
